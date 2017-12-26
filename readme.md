@@ -1,4 +1,4 @@
-#TagTextView
+# TagTextView
 
 > TagTextView是一个带标签的TextView，继承自TextView
 
@@ -6,9 +6,10 @@
 
 > TagTextView也可以添加到任意位置(暂未实现，有兴趣可以自己去探索)
 
+
 ![avatar](images/screen.png)
 
-#如何使用TagTextView
+# 如何使用TagTextView
 
 > 拷贝项目中的TagTextView.java文件及相关资源文件
 ```
