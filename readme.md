@@ -13,9 +13,9 @@
 
 > 拷贝项目中的TagTextView.java文件及相关资源文件
 ```
-    [TagTextView.java](app/src/main/java/com/xiaozhiguang/views/TagTextView.java)            // 自定义的TagTextView
-    [activity_tag_text_view.xml](app/src/main/res/layout/layout_textview_tags.xml)           // tag的布局文件
-    [shape_textview_tags_bg.xml](app/src/main/res/drawable/shape_textview_tags_bg.xml)       // tag的样式文件
+    [TagTextView.java](https://github.com/xiaozhiguang/TagTextView/blob/master/app/src/main/java/com/xiaozhiguang/views/TagTextView.java)            // 自定义的TagTextView
+    [activity_tag_text_view.xml](https://github.com/xiaozhiguang/TagTextView/blob/master/app/src/main/res/layout/layout_textview_tags.xml)           // tag的布局文件
+    [shape_textview_tags_bg.xml](https://github.com/xiaozhiguang/TagTextView/blob/master/app/src/main/res/drawable/shape_textview_tags_bg.xml)       // tag的样式文件
 
 ```
 
