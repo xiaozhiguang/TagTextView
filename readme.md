@@ -17,7 +17,7 @@
 
 ### 下载libs库然后引用
 
-* [点击下载libs库](https://github.com/xiaozhiguang/TagTextView.git)
+* [点击下载libs库](https://github.com/xiaozhiguang/TagTextView/archive/master.zip)
 
 ### 拷贝相关代码到自己的项目
 
