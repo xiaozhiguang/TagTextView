@@ -1,23 +1,33 @@
-# TagTextView
+# 什么是TagTextView？
 
-> TagTextView是一个带标签的TextView，继承自TextView
+1. TagTextView是一个带标签的TextView，继承自TextView
 
-> TagTextView可以实现在一段文字前显示一个或者多个标签
+2. TagTextView可以实现在一段文字头部或者尾部显示标签
 
-> TagTextView也可以添加到任意位置(暂未实现，有兴趣可以自己去探索)
+3. TagTextView也可以实现在一段文字上显示一个或者多个标签
+
+4. TagTextView更可以添加标签到你想要的任意位置
+
+5. TagTextView同时还支持自定义布局和样式，非常灵活
 
 
 ![avatar](images/screen.png)
 
 # 如何使用TagTextView
 
-> 拷贝项目中的TagTextView.java文件及相关资源文件
+### 下载libs库然后引用
 
-* [TagTextView.java](app/src/main/java/com/xiaozhiguang/views/TagTextView.java)            // 自定义的TagTextView
+* [点击下载libs库](https://github.com/xiaozhiguang/TagTextView.git)
 
-* [activity_tag_text_view.xml](app/src/main/res/layout/layout_textview_tags.xml)  // tag的布局文件
+### 拷贝相关代码到自己的项目
 
-* [shape_textview_tags_bg.xml](app/src/main/res/drawable/shape_textview_tags_bg.xml)  // tag的样式文件
+> 拷贝项目中的文件及相关资源
+
+* [TagTextView.java](libs/src/main/java/com/xiaozhiguang/views/TagTextView.java)             // 自定义的TagTextView
+
+* [activity_tag_text_view.xml](libs/src/main/res/layout/layout_textview_tags.xml)            // tag的布局文件
+
+* [shape_textview_tags_bg.xml](libs/src/main/res/drawable/shape_textview_tags_bg.xml)        // tag的样式文件
 
 > 在你的布局中引用自定义view
 
@@ -39,20 +49,36 @@
     tv_with_tags = findViewById(R.id.tv_with_tags);
 ```
 
-> 给TagTextView设置标签和内容
+> 给TagTextView设置标签和内容和样式等相关属性
 
 ```
-        //  设置单个标签
-        tv_with_tags.setSingleTagAndContent("系列", "这是一个带有tag的TextView");
+        //  头部标签
+        tv_with_tags.setSingleTagAndContent("标签", "这是一个带有tag的TextView");
         
-        //  设置多个标签
+        //  尾部标签
+        tv_with_single_tags_end.setTagsIndex(TagTextView.TAGS_INDEX_AT_END);
+        tv_with_single_tags_end.setSingleTagAndContent("尾部Tags", "这是一个尾部带有tag的TextView");
+        
+        //  多个标签
         List<String> tags = new ArrayList<>();
         tags.add("标签1");
         tags.add("标签2");
         tags.add("标签3");
         tags.add("标签4");
-        tv_with_tags.setMultiTagAndContent(tags, "这是一个带有多个tag的TextView");
+        tv_with_multiple_tags.setMultiTagAndContent(tags, "这是一个带有多个tag的TextView");
+        
+        //  自定义布局
+        tv_with_single_tags_anyway.setTagsLayoutID(R.layout.layout_tags);
+        
+        //  自定义标签样式
+        tv_with_single_tags_anyway.setTagsBackgroundStyle(R.drawable.shape_tags_bg);
+        
+        //  自定义位置的标签
+        tv_with_single_tags_anyway.setTagAnyway(4, 10, "这是一个可以自己设置标签位置的TextView");
+        
 ```
 # Tips
 
-> 小提示：使用TagTextView的过程中可能会出现标签与文字不对齐的问题，这里我暂时给出的解决方法是在布局文件中给文本添加一个间距能基本达到要求。
+1. 小提示：使用TagTextView的过程中可能会出现标签与文字不对齐的问题，这里我暂时给出的解决方法是在布局文件中给文本添加一个行间距能基本达到要求。
+
+2. TagTextView还有很多的地方可以拓展，大家有兴趣的可以试一试，另外大家有什么不懂的地方可以提问到[issues](https://github.com/xiaozhiguang/TagTextView/issues), 我会尽量解决您的问题。

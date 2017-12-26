@@ -40,6 +40,12 @@ public class TagTextViewActivity extends AppCompatActivity {
         tv_with_single_tags_end.setTagsIndex(TagTextView.TAGS_INDEX_AT_END);
         tv_with_single_tags_end.setSingleTagAndContent("尾部Tags", "这是一个尾部带有tag的TextView");
 
+        //  自定义布局
+        tv_with_single_tags_anyway.setTagsLayoutID(R.layout.layout_tags);
+
+        //  自定义标签样式
+        tv_with_single_tags_anyway.setTagsBackgroundStyle(R.drawable.shape_tags_bg);
+
         //  自定义位置的标签
         tv_with_single_tags_anyway.setTagAnyway(4, 10, "这是一个可以自己设置标签位置的TextView");
     }
