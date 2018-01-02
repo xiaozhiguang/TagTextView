@@ -14,7 +14,6 @@
         android:paddingLeft="4dp"
         android:paddingRight="4dp"
         android:paddingTop="1dp"
-        android:text="系列"
         android:textColor="#000000"
         android:textSize="12sp" />
 

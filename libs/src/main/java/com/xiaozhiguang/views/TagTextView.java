@@ -2,6 +2,7 @@ package com.xiaozhiguang.views;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
@@ -28,8 +29,10 @@ public class TagTextView extends android.support.v7.widget.AppCompatTextView {
     public static int TAGS_INDEX_AT_START = 0;
     public static int TAGS_INDEX_AT_END = 1;
 
-    private int tagsLayoutID = R.layout.layout_textview_tags;
     private int tagsBackgroundStyle = R.drawable.shape_textview_tags_bg;
+
+    private int tagTextSize = 10;       //  标签的字体大小
+    private String tagTextColor = "#FF08B1FF";    //   标签的字体颜色
 
     private StringBuffer content_buffer;
     private Context mContext;
@@ -53,16 +56,27 @@ public class TagTextView extends android.support.v7.widget.AppCompatTextView {
     }
 
     /**
-     * 设置标签的布局
-     * @param tagsLayoutID
+     * 设置标签的背景样式
+     *
+     * @param tagTextSize 你需要替换的tag文字字体大小
      */
-    public void setTagsLayoutID(int tagsLayoutID) {
-        this.tagsLayoutID = tagsLayoutID;
+    public void setTagTextSize(int tagTextSize) {
+        this.tagTextSize = tagTextSize;
     }
 
     /**
-     *  设置标签的背景样式
-     * @param tagsBackgroundStyle
+     * 设置标签的背景样式
+     *
+     * @param tagTextColor 你需要替换的tag的文字颜色
+     */
+    public void setTagTextColor(String tagTextColor) {
+        this.tagTextColor = tagTextColor;
+    }
+
+    /**
+     * 设置标签的背景样式
+     *
+     * @param tagsBackgroundStyle 你需要替换的tag背景样式
      */
     public void setTagsBackgroundStyle(int tagsBackgroundStyle) {
         this.tagsBackgroundStyle = tagsBackgroundStyle;
@@ -70,7 +84,8 @@ public class TagTextView extends android.support.v7.widget.AppCompatTextView {
 
     /**
      * 设置标签是在头部还是尾部
-     * @param tagsIndex
+     *
+     * @param tagsIndex 头部还是尾部显示tag
      */
     public void setTagsIndex(int tagsIndex) {
         this.tagsIndex = tagsIndex;
@@ -121,9 +136,11 @@ public class TagTextView extends android.support.v7.widget.AppCompatTextView {
             String item = tags.get(i);
             endIndex += item.length();
             //  设置标签的布局
-            View view = LayoutInflater.from(mContext).inflate(tagsLayoutID, null);
+            View view = LayoutInflater.from(mContext).inflate(R.layout.layout_textview_tags, null);
             tv_tag = view.findViewById(R.id.tv_tags);
             tv_tag.setText(item);
+            tv_tag.setTextSize(tagTextSize);
+            tv_tag.setTextColor(Color.parseColor(tagTextColor));
             //  设置背景样式
             tv_tag.setBackgroundResource(tagsBackgroundStyle);
 
@@ -154,9 +171,11 @@ public class TagTextView extends android.support.v7.widget.AppCompatTextView {
         for (int i = 0; i < tags.size(); i++) {
             String item = tags.get(i);
             //  设置标签的布局
-            View view = LayoutInflater.from(mContext).inflate(tagsLayoutID, null);
+            View view = LayoutInflater.from(mContext).inflate(R.layout.layout_textview_tags, null);
             tv_tag = view.findViewById(R.id.tv_tags);
             tv_tag.setText(item);
+            tv_tag.setTextSize(tagTextSize);
+            tv_tag.setTextColor(Color.parseColor(tagTextColor));
             //  设置背景样式
             tv_tag.setBackgroundResource(tagsBackgroundStyle);
 
@@ -181,10 +200,12 @@ public class TagTextView extends android.support.v7.widget.AppCompatTextView {
     public void setTagAnyway(int start, int end, String content) {
         SpannableString spannableString = new SpannableString(content);
         //  设置标签的布局
-        View view = LayoutInflater.from(mContext).inflate(tagsLayoutID, null);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.layout_textview_tags, null);
         String item = content.substring(start, end);
         tv_tag = view.findViewById(R.id.tv_tags);
         tv_tag.setText(item);
+        tv_tag.setTextSize(tagTextSize);
+        tv_tag.setTextColor(Color.parseColor(tagTextColor));
         //  设置背景样式
         tv_tag.setBackgroundResource(tagsBackgroundStyle);
 

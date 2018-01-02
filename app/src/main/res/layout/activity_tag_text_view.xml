@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
     android:orientation="vertical"
     android:padding="20dp">
 
@@ -11,8 +10,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:lineSpacingExtra="2dp"
-        android:text="这是一个带tag的TextView"
-        android:textColor="#000000"
+        android:text="@string/single_tags"
+        android:textColor="@color/text_color"
         android:textSize="16sp" />
 
     <com.xiaozhiguang.views.TagTextView
@@ -21,8 +20,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:lineSpacingExtra="2dp"
-        android:text="这是一个尾部带tag的TextView"
-        android:textColor="#000000"
+        android:text="@string/single_tags_end"
+        android:textColor="@color/text_color"
         android:textSize="16sp" />
 
     <com.xiaozhiguang.views.TagTextView
@@ -31,8 +30,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:lineSpacingExtra="2dp"
-        android:text="这是一个带多个tag的TextView"
-        android:textColor="#000000"
+        android:text="@string/multi_tags"
+        android:textColor="@color/text_color"
         android:textSize="16sp" />
 
     <com.xiaozhiguang.views.TagTextView
@@ -41,8 +40,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:lineSpacingExtra="2dp"
-        android:text="这是一个任意位置添加tag的TextView"
-        android:textColor="#000000"
+        android:text="@string/anyway_tags"
+        android:textColor="@color/text_color"
         android:textSize="16sp" />
 
 </LinearLayout>

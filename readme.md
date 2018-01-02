@@ -67,8 +67,9 @@
         tags.add("标签4");
         tv_with_multiple_tags.setMultiTagAndContent(tags, "这是一个带有多个tag的TextView");
         
-        //  自定义布局
-        tv_with_single_tags_anyway.setTagsLayoutID(R.layout.layout_tags);
+        //  设置标签的字体大小和颜色
+        tv_with_single_tags_anyway.setTagTextSize(12);
+        tv_with_single_tags_anyway.setTagTextColor("#FF0000");
         
         //  自定义标签样式
         tv_with_single_tags_anyway.setTagsBackgroundStyle(R.drawable.shape_tags_bg);
