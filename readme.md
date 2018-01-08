@@ -8,7 +8,9 @@
 
 4. TagTextView更可以添加标签到你想要的任意位置
 
-5. TagTextView同时还支持自定义布局和样式，非常灵活
+5. TagTextView还能添加图片作为标签显示
+
+6. TagTextView同时还支持自定义布局和样式，非常灵活
 
 
 ![avatar](images/screen.png)
@@ -77,9 +79,12 @@
         //  自定义位置的标签
         tv_with_single_tags_anyway.setTagAnyway(4, 10, "这是一个可以自己设置标签位置的TextView");
         
+        //  图片标签
+        tv_with_image_tags.setTagImageStart(this, R.mipmap.icon_close, " 这是一个添加图片tag的TextView", 20, 20);
+        
 ```
 # Tips
 
-1. 小提示：使用TagTextView的过程中可能会出现标签与文字不对齐的问题，这里我暂时给出的解决方法是在布局文件中给文本添加一个行间距能基本达到要求。
+1. 小提示：自带的ImageSpan显示出来的标签可能会出现与文字内容布局中的情况，所以采用了自定义CenterImageSpan的方法来达到标签与文字内容居住的效果。
 
 2. TagTextView还有很多的地方可以拓展，大家有兴趣的可以试一试，另外大家有什么不懂的地方可以提问到[issues](https://github.com/xiaozhiguang/TagTextView/issues), 我会尽量解决您的问题。

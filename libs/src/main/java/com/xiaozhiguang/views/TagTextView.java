@@ -2,13 +2,13 @@ package com.xiaozhiguang.views;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.text.Spannable;
 import android.text.SpannableString;
-import android.text.style.ImageSpan;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -148,10 +148,28 @@ public class TagTextView extends android.support.v7.widget.AppCompatTextView {
             Drawable drawable = new BitmapDrawable(bitmap);
             drawable.setBounds(0, 0, tv_tag.getWidth(), tv_tag.getHeight());
 
-            ImageSpan span = new ImageSpan(drawable, ImageSpan.ALIGN_BASELINE);
+            CenterImageSpan span = new CenterImageSpan(drawable);
             spannableString.setSpan(span, startIndex - 1, endIndex, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
             startIndex += item.length();
         }
+        setText(spannableString);
+        setGravity(Gravity.CENTER_VERTICAL);
+    }
+
+    /**
+     * 设置图片
+     *
+     * @param resID   资源ID
+     * @param content 文字内容
+     */
+    public void setTagImageStart(Context context, int resID, String content, int width, int height) {
+        content_buffer = new StringBuffer("**" + content);  //  两个字符占位
+        SpannableString spannableString = new SpannableString(content_buffer);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), resID);
+        Drawable drawable = new BitmapDrawable(bitmap);
+        drawable.setBounds(0, 0, dp2px(context, width), dp2px(context, height));
+        CenterImageSpan span = new CenterImageSpan(drawable);
+        spannableString.setSpan(span, 0, 2, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         setText(spannableString);
         setGravity(Gravity.CENTER_VERTICAL);
     }
@@ -183,7 +201,7 @@ public class TagTextView extends android.support.v7.widget.AppCompatTextView {
             Drawable drawable = new BitmapDrawable(bitmap);
             drawable.setBounds(0, 0, tv_tag.getWidth(), tv_tag.getHeight());
 
-            ImageSpan span = new ImageSpan(drawable, ImageSpan.ALIGN_BASELINE);
+            CenterImageSpan span = new CenterImageSpan(drawable);
             spannableString.setSpan(span, content_buffer.length() - item.length(), content_buffer.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         }
         setText(spannableString);
@@ -213,10 +231,21 @@ public class TagTextView extends android.support.v7.widget.AppCompatTextView {
         Drawable drawable = new BitmapDrawable(bitmap);
         drawable.setBounds(0, 0, tv_tag.getWidth(), tv_tag.getHeight());
 
-        ImageSpan span = new ImageSpan(drawable, ImageSpan.ALIGN_BASELINE);
+        CenterImageSpan span = new CenterImageSpan(drawable);
         spannableString.setSpan(span, start, end, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         setText(spannableString);
         setGravity(Gravity.CENTER_VERTICAL);
+    }
+
+    /**
+     * Android中dp和pix互相转化
+     *
+     * @param dpValue dp值
+     * @return
+     */
+    public static int dp2px(Context context, float dpValue) {
+        float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (dpValue * scale + 0.5f);
     }
 
     private static Bitmap convertViewToBitmap(View view) {

@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">TagTextView</string>
     <string name="single_tags">这是一个带tag的TextView</string>
-    <string name="single_tags_end">这是一个尾部带tag的TextView</string>
     <string name="multi_tags">这是一个带多个tag的TextView</string>
+    <string name="image_tags">这是一个添加图片tag的TextView</string>
+    <string name="single_tags_end">这是一个尾部带tag的TextView</string>
     <string name="anyway_tags">这是一个任意位置添加tag的TextView</string>
 </resources>
