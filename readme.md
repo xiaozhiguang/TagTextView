@@ -19,9 +19,20 @@
 
 ### 在build.gradle中添加依赖
 
-[![Download](https://api.bintray.com/packages/coukmate/maven/TagTextView/images/download.svg)](https://bintray.com/coukmate/maven/TagTextView/_latestVersion)
+> 当前版本：[![Download](https://api.bintray.com/packages/coukmate/maven/TagTextView/images/download.svg)](https://bintray.com/coukmate/maven/TagTextView/_latestVersion)
 
 ```
+
+repositories {
+    maven {
+        url 'https://coukmate.bintray.com/maven'
+    }
+}
+
+```
+
+```
+
 compile 'com.xiaozhiguang:TagTextView:1.0.0'
 
 ```
