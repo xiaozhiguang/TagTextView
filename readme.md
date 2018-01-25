@@ -17,19 +17,18 @@
 
 # 如何使用TagTextView
 
-### 下载libs库然后引用
+### 在build.gradle中添加依赖
+
+[![Download](https://api.bintray.com/packages/coukmate/maven/TagTextView/images/download.svg)](https://bintray.com/coukmate/maven/TagTextView/_latestVersion)
+
+```
+compile 'com.xiaozhiguang:TagTextView:1.0.0'
+
+```
+
+### 或者直接下载libs库然后引用到项目中
 
 * [点击下载libs库](https://github.com/xiaozhiguang/TagTextView/archive/master.zip)
-
-### 拷贝相关代码到自己的项目
-
-> 拷贝项目中的文件及相关资源
-
-* [TagTextView.java](libs/src/main/java/com/xiaozhiguang/views/TagTextView.java)             // 自定义的TagTextView
-
-* [activity_tag_text_view.xml](libs/src/main/res/layout/layout_textview_tags.xml)            // tag的布局文件
-
-* [shape_textview_tags_bg.xml](libs/src/main/res/drawable/shape_textview_tags_bg.xml)        // tag的样式文件
 
 > 在你的布局中引用自定义view
 
