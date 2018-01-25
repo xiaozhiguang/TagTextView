@@ -31,10 +31,10 @@ dependencies {
 }
 
 publish {
-    userOrg = 'xiaozhiguang'//bintray.com用户名
-    groupId = 'com.xiaozhiguang'//jcenter上的路径
-    artifactId = 'tagtextview'//项目名称
-    publishVersion = '1.0.0'//版本号
-    desc = 'Oh hi, this is a nice description for a project, right?'//描述，不重要
-    website = 'https://github.com/xiaozhiguang/TagTextView'// 尽量模拟github上的地址
+    userOrg = 'xiaozhiguang1206'                                    //  bintray.com用户名
+    groupId = 'com.xiaozhiguang'                                    //  jcenter上的路径
+    artifactId = 'TagTextView'                                      //  项目名称
+    publishVersion = '1.0.0'                                        //  版本号
+    desc = 'This is a TextView with Tags'                           //  项目描述
+    website = 'https://github.com/xiaozhiguang/TagTextView'         //  github地址
 }
