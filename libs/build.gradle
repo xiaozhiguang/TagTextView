@@ -31,8 +31,8 @@ dependencies {
 }
 
 publish {
-    userOrg = 'coukmate'                                            //  bintray.com用户名
-    groupId = 'com.xiaozhiguang'                                    //  jcenter上的路径
+    userOrg = 'xiaozhiguang666'                                     //  bintray.com用户名
+    groupId = 'com.xiaozhiguang.library'                            //  jcenter上的路径
     artifactId = 'TagTextView'                                      //  项目名称
     publishVersion = '1.0.0'                                        //  版本号
     desc = 'This is a TextView with Tags'                           //  项目描述
